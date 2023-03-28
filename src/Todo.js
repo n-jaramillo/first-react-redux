@@ -15,8 +15,13 @@ function Todo() {
     }
 
     const todoItems = items.map((item, index) =>
-        <li key={index} style={{paddingBottom: "15px"}}>
-            {item}<span style={{marginLeft: "10px"}}><button onClick={() => dispatch(removeTodo())}>x</button></span>
+        <li key={index} style={{ paddingBottom: "15px" }}>
+            {item}
+            <span style={{ marginLeft: "10px" }}>
+                <button onClick={() => dispatch(removeTodo(index))}>
+                    x
+                </button>
+            </span>
         </li>
     )
 
@@ -32,7 +37,7 @@ function Todo() {
             <button onClick={() => dispatch(clearTodos())}>
                 Clear Todos
             </button>
-            <ul style={{listStyleType: "none"}}>
+            <ul style={{ listStyleType: "none" }}>
                 {todoItems}
             </ul>
         </div>
