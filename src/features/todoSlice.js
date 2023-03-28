@@ -8,8 +8,8 @@ export const todoSlice = createSlice({
     name: 'todos',
     initialState,
     reducers: {
-        addTodo: () => {
-
+        addTodo: (state, action) => {
+            return { items: [...state.items, action.payload] }
         },
         clearTodos: () => {
 
